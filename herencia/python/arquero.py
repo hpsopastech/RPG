@@ -8,3 +8,10 @@ class Arquero (Personaje):
 
     def __str__(self):
         return f"{super().__str__()} | FLECHAS: {self.flechas}"
+
+    def atacar(self, objetivo):
+        if self.flechas < 1:
+            print ("No tienes flechas para atacar")
+        else:
+            self.flechas = self.flechas - 1
+            objetivo.recibir_dano(self.ataque)

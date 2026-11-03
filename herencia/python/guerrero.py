@@ -9,3 +9,11 @@ class Guerrero (Personaje):
 
     def __str__(self):
         return f"{super().__str__()} | ARMADURA: {self.armadura} | FUERZA: {self.fuerza}"
+
+    def recibir_dano(self, cantidad):
+        dano_reducido = cantidad - self.armadura
+
+        if cantidad < self.armadura:
+            dano_reducido = 0
+            
+        super().recibir_dano(dano_reducido)
