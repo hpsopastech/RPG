@@ -9,9 +9,20 @@ class Mago (Personaje):
     def __str__(self):
         return f"{super().__str__()} | MANA: {self.mana}"
 
-    def atacar(self, objetivo):
-        if self.mana < 10:
-            print ("No tienes Mana para atacar")
+    def atacar(self, objetivo, hechizo=None):
+
+        if hechizo:
+            if self.mana > 20:
+                print(f"{self.nombre} lanza hechizo {hechizo}")
+                self.mana = self.mana - 20
+                objetivo.recibir_dano(self.ataque * 2)
+            else:
+                print ("No tienes Mana para lanzar hechizo")
+
         else:
-            self.mana = self.mana - 10
-            objetivo.recibir_dano(self.ataque)
+            if self.mana < 10:
+                print ("No tienes Mana para atacar")
+
+            else:
+                self.mana = self.mana - 10
+                objetivo.recibir_dano(self.ataque)
