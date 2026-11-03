@@ -20,3 +20,8 @@ print(f"a esta vivo?: {a.esta_vivo()}")
 print(g)
 print(m)
 print(a)
+
+g.habilidad_especial()
+m.habilidad_especial()
+a.habilidad_especial()
+

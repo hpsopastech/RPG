@@ -6,6 +6,10 @@ class Mago (Personaje):
         super().__init__(nombre, nivel, vida_maxima, ataque)
         self.mana = mana
 
+    def habilidad_especial(self):
+        print (f"{self.nombre} usa su habilidad especial: RECARGA DE MANA")
+        self.mana = self.mana + 50
+        
     def __str__(self):
         return f"{super().__str__()} | MANA: {self.mana}"
 
