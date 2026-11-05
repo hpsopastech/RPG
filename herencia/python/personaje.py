@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from inventario import Inventario
 
 class Personaje(ABC):
     def __init__(self, nombre, nivel, vida_maxima, ataque):
@@ -7,6 +8,7 @@ class Personaje(ABC):
         self.ataque = ataque
         self.vida_maxima = vida_maxima
         self.vida = vida_maxima
+        self.inventario = Inventario()
 
     def __str__(self):
         return f"PERSONAJE: {self.nombre} | NIVEL: {self.nivel} | VIDA: {self.vida}/{self.vida_maxima} | ATAQUE: {self.ataque}"
