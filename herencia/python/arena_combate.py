@@ -14,7 +14,7 @@ class ArenaCombate:
             print(f"\nCombatiente 1 esta vivo: {self.combatiente1.esta_vivo()}")
             print(f"Combatiente 2 esta vivo: {self.combatiente2.esta_vivo()}")
 
-            print("\n///////////////////////\nTURNO DE ATAQUE\n///////////////////////")
+            print("\n-------------------\nTURNO DE ATAQUE\n----------------------")
             
             self.combatiente1.atacar(self.combatiente2)
             if self.combatiente2.esta_vivo()==False:
