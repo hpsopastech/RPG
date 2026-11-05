@@ -1,0 +1,5 @@
+class Item():
+    def __init__(self, nombre, tipo, valor):
+        self.nombre = nombre
+        self.tipo = tipo
+        self.valor = valor
