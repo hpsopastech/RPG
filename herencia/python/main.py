@@ -4,13 +4,14 @@ from mago import Mago
 from arquero import Arquero
 from monstruo import Monstruo
 from item import Item
-from inventario import Inventario
 from mision import Mision
+from arena_combate import ArenaCombate
 
 g = Guerrero ("Andres", 1, 100, 15, 30, 20)
 m = Mago ("Pilar", 1, 70, 20, 100) 
 a = Arquero ("Carlos", 1, 80, 10, 64)
 x = Monstruo ("Goblin", 50, 5)
+b = Monstruo ("Bruja", 50, 20)
 jugador = None
 patORO = Item ("PATO DE ORO", "TESORO", 1000)
 mis = Mision ("Recoger medicina", "50 de oro")
@@ -59,7 +60,7 @@ while opcion == None:
         break
     elif opcion == "2":
         print("Has decidido huir del combate")
-        print(f"El {x.nombre} Te ha dejado ir\n ")
+        print(f"El {x.nombre} Te ha dejado ir")
         print(f"El {x.nombre} tiene {x.vida}/{x.vida_maxima} de vida restante")
         break
 
@@ -80,4 +81,14 @@ while opcion == None:
 
 print("caminando por el bosque te encuentras con un grupo de aventureros que te piden ayuda\nPara recoger medicina para un herido")
 mis.agregar_personaje(jugador)
-print(f"Has aceptado la mision: {mis.nombre} y tu recompensa sera: {mis.recompensa}")
+print(f"Eres ultra mega super duper buena persona asi que\nAutomaticamente has aceptado la mision: {mis.nombre} y tu recompensa sera: {mis.recompensa}")
+
+print("/////////////////////////\n////////////////////////\n////////////////////////")
+
+print("Al llegar al lugar donde estaba la medicina, se dieron cuenta de que la habia robado la bruja")
+
+print("Asi que empezo una pelea")
+
+primera = ArenaCombate(jugador, b)
+
+primera.iniciar_combate()

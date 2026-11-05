@@ -1,6 +1,7 @@
 from typing import Protocol
 
 class Combatiente(Protocol):
+    nombre: str
 
     def esta_vivo(self) -> bool:
         ...
